@@ -236,7 +236,7 @@
 		        <del>&#8377;299.00</del>
 		        &#8377;199.0+ Free Shipping
 		        <p>The Crassula Green mini has lush foilage that beautifies any room and is one of the easiest indoor plants to care for.Bring some some green home, and good fortune will come at no cost.</p>
-		        <form action="/process_cart" method="post">
+		        <form action="/process_cart" method="post" onsubmit="return validateQuantity();">
 			    <div class="input-button-container">
 			        <label for="quantity">Quantity:</label>
 			        <input type="text" id="quantity" name="quantity" placeholder="1">
