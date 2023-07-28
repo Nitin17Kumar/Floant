@@ -250,6 +250,19 @@
 		    </div>
 		</div>
     </div>
+<script>
+    function validateQuantity() {
+        const quantityInput = document.getElementById("quantity");
+        const quantityValue = parseInt(quantityInput.value);
+
+        if (quantityValue <= 0) {
+            alert("Please enter a valid quantity greater than 0.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
     
 </body>
 </html>
