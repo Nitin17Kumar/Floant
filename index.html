@@ -1,197 +1,246 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Floant</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Floant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-	<style>
-		body {
-		    margin: 0;
-		    padding: 0;
-		    font-family: Arial, sans-serif;
-		    
-		}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-		header {
-		    display: flex;
-		    align-items: center;
-		    justify-content: space-between;
-		    background-color: white;
-		    padding: 10px;
-		    margin-right: 100px;
-		    margin-left: 100px;
-		}
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
 
-		.logo {
-		    font-size: 24px;
-		    font-weight: bold;
-		}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-		nav ul {
-		    list-style: none;
-		    display: flex;
-		}
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap; /* Added to wrap the navigation items */
+            margin: 0;
+            padding: 0;
+        }
 
-		nav ul li {
-		    margin-right: 20px;
-		}
+        nav ul li {
+            margin-right: 20px;
+        }
 
-		nav ul li a {
-		    text-decoration: none;
-		    color: #333;
-		    font-weight: bold;
-		}
+        nav ul li:last-child {
+            margin-right: 0; /* Remove right margin from the last item */
+        }
 
-		.currency {
-		    margin-right: 20px;
-		}
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
 
-		.buttons a {
-		    display: inline-block;
-		    text-decoration: none;
-		    color: #fff;
-		    padding: 8px 16px;
-		    border-radius: 4px;
-		}
+        .currency {
+            margin-right: 20px;
+        }
 
-		.shopping-button {
-		    background-color: green;
-		    margin-right: 10px;
-		}
+        .buttons a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
 
-		.login-button {
-		    background-color: green;
-		}
+        .shopping-button {
+            background-color: green;
+            margin-right: 10px;
+        }
 
-		.green-line {
-		    border: 2px solid #28a745; /* Green color */
-		    border-radius: 5px;
-		    margin-right: 100px;
-		    margin-left: 100px;
-		}
-		.content{
-			background-color: grey;
-			margin-right: 100px;
-			margin-left: 100px;
-		}
-		/* Your existing CSS styles go here */
+        .login-button {
+            background-color: green;
+        }
 
-		/* Style for the green line */
-		.green-line {
-		    border: 2px solid #28a745; /* Green color */
-		    border-radius: 5px;
-		    margin-left: calc(50% - (width_of_header / 2));
-		    margin-right: calc(50% - (width_of_header / 2));
-		}
+        .green-line {
+            border: 2px solid #28a745; /* Green color */
+            border-radius: 5px;
+            margin-left: 20px; /* Centered on smaller screens */
+            margin-right: 20px; /* Centered on smaller screens */
+        }
 
-		/* Style for the green tick mark, content, and button */
-		.tick-content-button {
-		    display: flex;
-		    justify-content: space-between;
-		    align-items: center;
-		    margin-left: 100px;
-		    margin-right: 100px;
-		}
+        .content {
+            background-color: grey;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
 
-		/* Style for the left content */
-		.left-content {
-		    display: flex;
-		    align-items: center;
-		}
+        /* Your existing CSS styles go here */
 
-		/* Style for the green tick mark */
+        /* Style for the green line */
+        .green-line {
+            /* No need for this duplicated rule */
+        }
+
+        /* Style for the green tick mark, content, and button */
+        .tick-content-button {
+            display: flex;
+            flex-direction: column; /* Stacked on smaller screens */
+            align-items: center;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        /* Style for the left content */
+        .left-content {
+            display: flex;
+            flex-direction: column; /* Stacked on smaller screens */
+            align-items: center; /* Centered on smaller screens */
+        }
+
+        /* Style for the green tick mark */
 
 
-		/* Style for the green circle icon */
-		.fa-check-circle {
-		    background-color: #28a745; /* Green color */
-		    border-radius: 50%;
-		    padding: 4px;
-		}
+        /* Style for the green circle icon */
+        .fa-check-circle {
+            background-color: #28a745; /* Green color */
+            border-radius: 50%;
+            padding: 4px;
+        }
 
-		/* Style for the content text */
-		.content-text {
-		    margin-right: 10px;
-		}
+        /* Style for the content text */
+        .content-text {
+            margin-top: 10px; /* Add some spacing on smaller screens */
+        }
 
-		/* Style for the green button */
-		.green-button {
-		    background-color: #28a745; /* Green color */
-		    color: #fff;
-		    padding: 8px 16px;
-		    border-radius: 4px;
-		    text-decoration: none;
-		}
-		/* Style for the sale section */
-		.sale-section {
-		    display: flex;
-		    align-items: center;
-		    margin-top: 20px;
-		}
+        /* Style for the green button */
+        .green-button {
+            background-color: #28a745; /* Green color */
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px; /* Add some spacing on smaller screens */
+        }
 
-		/* Style for the sale image container */
-		.sale-image {
-		    position: relative;
-		}
+        /* Style for the sale section */
+        .sale-section {
+            display: flex;
+            flex-direction: column; /* Stacked on smaller screens */
+            align-items: center; /* Centered on smaller screens */
+            margin-top: 20px;
+        }
 
-		/* Style for the circle background */
-		.circle-background {
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    background-color: #28a745; /* Green color */
-		    border-radius: 50%;
-		    color: #fff;
-		    display: flex;
-		    align-items: center;
-		    justify-content: center;
-		    padding: 6px;
-		}
+        /* Style for the sale image container */
+        .sale-image {
+            position: relative;
+            margin-bottom: 10px; /* Add some spacing on smaller screens */
+        }
 
-		/* Style for the sale text */
-		.sale-text {
-		    font-size: 12px;
-		    font-weight: bold;
-		}
+        /* Style for the circle background */
+        .circle-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #28a745; /* Green color */
+            border-radius: 50%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+        }
 
-		/* Style for the search symbol */
-		.search-symbol {
-		    position: absolute;
-		    top: 0;
-		    right: 0;
-		    background-color: #28a745; /* Green color */
-		    color: #fff;
-		    display: flex;
-		    align-items: center;
-		    justify-content: center;
-		    padding: 6px;
-		    border-radius: 50%;
-		}
+        /* Style for the sale text */
+        .sale-text {
+            font-size: 12px;
+            font-weight: bold;
+        }
 
-		/* Style for the search icon */
-		.fa-search {
-		    font-size: 16px;
-		}
+        /* Style for the search symbol */
+        .search-symbol {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #28a745; /* Green color */
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            border-radius: 50%;
+        }
 
-		/* Style for the left side content */
-		.left-side-content {
-		    margin-left: 20px;
-		}
+        /* Style for the search icon */
+        .fa-search {
+            font-size: 16px;
+        }
 
-		/* Style for the image */
-		.sale-image img {
-		    max-width: 200px;
-		    max-height: 150px;
-		}
+        /* Style for the left side content */
+        .left-side-content {
+            margin-left: 20px;
+        }
 
-	</style>
+        /* Style for the image */
+        .sale-image img {
+            max-width: 100%; /* Ensure the image scales properly */
+            height: auto; /* Ensure the image scales properly */
+        }
+
+        /* Media Query for responsiveness */
+        @media screen and (min-width: 768px) {
+            header {
+                margin-right: 100px;
+                margin-left: 100px;
+            }
+
+            .green-line {
+                margin-left: calc(50% - (width_of_header / 2));
+                margin-right: calc(50% - (width_of_header / 2));
+            }
+
+            .tick-content-button {
+                flex-direction: row; /* Revert to original flex direction on larger screens */
+            }
+
+            .left-content {
+                flex-direction: row; /* Revert to original flex direction on larger screens */
+                align-items: flex-start; /* Revert to original alignment on larger screens */
+            }
+
+            .green-line {
+                /* No need for this duplicated rule */
+            }
+
+            .content {
+                margin-right: 100px;
+                margin-left: 100px;
+            }
+
+            .sale-section {
+                flex-direction: row; /* Revert to original flex direction on larger screens */
+                align-items: flex-start; /* Revert to original alignment on larger screens */
+            }
+
+            .sale-image {
+                margin-bottom: 0; /* Remove spacing on larger screens */
+            }
+        }
+    </style>
 </head>
 <body>
-	  <header>
+    <header>
         <div class="logo">
-        	<img src="logo.png">
+            <img src="logo.png">
         </div>
         <nav>
             <ul>
@@ -200,21 +249,20 @@
                 <li><a href="#">Flower</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-                <div class="currency">
-            <span>&#8377;0.00</span>
-        </div>
-        <div class="buttons">
-            <a href="#" class="shopping-button"><i class="fas fa-shopping-cart"></i></a>
-            <a href="#" class="login-button"><i class="fas fa-user"></i></a>
-        </div>
             </ul>
+            <div class="currency">
+                <span>&#8377;0.00</span>
+            </div>
+            <div class="buttons">
+                <a href="#" class="shopping-button"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="login-button"><i class="fas fa-user"></i></a>
+            </div>
         </nav>
-        
     </header>
     <div class="content">
-    	<br>
-    	<hr class="green-line">
-    	<div class="tick-content-button">
+        <br>
+        <hr class="green-line">
+        <div class="tick-content-button">
             <div class="left-content">
                 <span class="tick-mark"><i class="fas fa-check-circle"></i></span>
                 <p class="content-text">"Mini Jade Plant" has been added to your cart.</p>
@@ -222,47 +270,45 @@
             <a href="#" class="green-button">View Cart</a>
         </div>
         <div class="sale-section">
-		    <div class="sale-image">
-		        <img src="plant.png" alt="Sale Image" style="height: 1140rem; width: 1140rem;">
-		        <div class="circle-background">
-		            <span class="sale-text">Sale</span>
-		        </div>
-		        <div class="search-symbol">
-		            <i class="fas fa-search"></i>
-		        </div>
-		    </div>
-		    <div class="left-side-content">
-		        <h2>Mini Jade Plant</h2>
-		        <del>&#8377;299.00</del>
-		        &#8377;199.0+ Free Shipping
-		        <p>The Crassula Green mini has lush foilage that beautifies any room and is one of the easiest indoor plants to care for.Bring some some green home, and good fortune will come at no cost.</p>
-		        <form action="/process_cart" method="post" onsubmit="return validateQuantity();">
-			    <div class="input-button-container">
-			        <label for="quantity">Quantity:</label>
-			        <input type="text" id="quantity" name="quantity" placeholder="1">
-			        <button type="submit" class="green-button">Add to Cart</button>
-			        <button type="reset" class="green-button">Remove from Cart</button>
-			    </div>
-			</form>
-
-		        <hr class="green-line">
-		        <p>categories:<span style="color: green;">Best selling Products</span>, <span style="color: green;">Plants</span> </p>
-		    </div>
-		</div>
+            <div class="sale-image">
+                <img src="plant.png" alt="Sale Image">
+                <div class="circle-background">
+                    <span class="sale-text">Sale</span>
+                </div>
+                <div class="search-symbol">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="left-side-content">
+                <h2>Mini Jade Plant</h2>
+                <del>&#8377;299.00</del>
+                &#8377;199.0+ Free Shipping
+                <p>The Crassula Green mini has lush foliage that beautifies any room and is one of the easiest indoor plants to care for. Bring some green home, and good fortune will come at no cost.</p>
+                <form action="/process_cart" method="post" onsubmit="return validateQuantity();">
+                    <div class="input-button-container">
+                        <label for="quantity">Quantity:</label>
+                        <input type="text" id="quantity" name="quantity" placeholder="1">
+                        <button type="submit" class="green-button">Add to Cart</button>
+                        <button type="reset" class="green-button">Remove from Cart</button>
+                    </div>
+                </form>
+                <hr class="green-line">
+                <p>categories: <span style="color: green;">Best selling Products</span>, <span style="color: green;">Plants</span></p>
+            </div>
+        </div>
     </div>
-<script>
-    function validateQuantity() {
-        const quantityInput = document.getElementById("quantity");
-        const quantityValue = parseInt(quantityInput.value);
+    <script>
+        function validateQuantity() {
+            const quantityInput = document.getElementById("quantity");
+            const quantityValue = parseInt(quantityInput.value);
 
-        if (quantityValue <= 0) {
-            alert("Please enter a valid quantity greater than 0.");
-            return false;
+            if (quantityValue <= 0) {
+                alert("Please enter a valid quantity greater than 0.");
+                return false;
+            }
+
+            return true;
         }
-
-        return true;
-    }
-</script>
-    
+    </script>
 </body>
 </html>
